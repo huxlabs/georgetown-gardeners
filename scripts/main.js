@@ -9,9 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
   // Load initial animation
   loadAnimation().then(() => {
     // Initiate manage float animation
-    manageFloatAnimation()
+    manageFloatAnimation();
   })
-  manageFloatAnimation()
 
   // Set scroll to contact buttons
   setScrollToContact();
