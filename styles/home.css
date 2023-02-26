@@ -21,19 +21,6 @@
   color: #fff;
 }
 
-.service-card {
-  border-radius: var(--border-radius);
-  padding: var(--gap);
-  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.service-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.1);
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -54,3 +41,52 @@
   width: 100%;
   max-width: 50rem;
 }
+
+.card {
+  height: 20rem;
+  position: relative;
+  perspective: 1000px; /* This sets the 3D perspective */
+}
+
+.card-inner {
+  border-radius: var(--border-radius);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--gap);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* .service-card {
+  border-radius: var(--border-radius);
+  padding: var(--gap);
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.1);
+} */
